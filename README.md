@@ -47,6 +47,7 @@ Initiate the Cluster using Terraform
 - * terraform validate
 - * terraform plan
 - * terraform apply
+ or &#8595;
 - * terraform apply --auto-approve 
 
 Configuration Management using Ansible
@@ -79,3 +80,7 @@ Run the Play Book
 -------------------
 
 - * ansible-playbook -i DynamicInventory.py site.yml -u ubuntu --private-key=./k8-new-key-pair.pem
+
+Destroy the Cluster
+-------------------
+- * terraform destroy
