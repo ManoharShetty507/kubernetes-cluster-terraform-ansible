@@ -13,9 +13,9 @@ Requirements:
 
 Create a User:
 --------------
-- # sudo useradd ansible
-- # echo "ansible ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
-- # sudo su ansible
+- ** sudo useradd ansible
+- **  echo "ansible ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
+- **  sudo su ansible
 
 Install Terraform
 ------------------
