@@ -47,7 +47,7 @@ Initiate the Cluster using Terraform
 - * terraform validate
 - * terraform plan
 - * terraform apply
- or &#8595;
+- or &#8595;
 - * terraform apply --auto-approve 
 
 Configuration Management using Ansible
@@ -84,3 +84,5 @@ Run the Play Book
 Destroy the Cluster
 -------------------
 - * terraform destroy
+- (or) &#8595;
+-  * terraform destroy --auto-approve
