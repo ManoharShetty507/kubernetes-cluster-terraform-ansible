@@ -25,7 +25,7 @@ Install Terraform
 - * sudo unzip terraform_0.12.28_linux_amd64.zip -d /usr/local/bin
 - * export PATH=$PATH:/usr/local/bin
 - * vi .bashrc
-   - Add this content
+&#8594; Add this content
 - * export PATH="$PATH:/usr/local/bin"
 
 - * source ~/.bashrc
@@ -51,28 +51,28 @@ Initiate the Cluster using Terraform
 
 Configuration Management using Ansible
 --------------------------------------
-- We will using AWS SDK Boto3 to write a python script to Servers based on Tag name and Value.
+&#8594; We will using AWS SDK Boto3 to write a python script to Servers based on Tag name and Value.
 
-- Check if all the hosts are pinging
+&#8594; Check if all the hosts are pinging
 - ansible all -m ping
 - Let's set the default region
 - * mkdir ~/.aws
 
 - * vi ~/.aws/config
-  - Add this lines
+&#8594; Add this lines
     - [default]
     - region=ap-south-1
 
 - * chmod +x DynamicInventory.py 
 - * ./DynamicInventory.py --list
-- 
-- Copy the Pem File
+
+&#8594; Copy the Pem File
 -  * vi ~/k8-allinone.pem
 
-- Change the permission of the key
+&#8594; Change the permission of the key
 - * chmod 400 k8-new-key-pair.pem
 
-- Check if there is interconnectivity among the servers
+&#8594; Check if there is interconnectivity among the servers
 - * ansible Kubernetes_Servers -i DynamicInventory.py -m ping --ssh-common-args="-o StrictHostKeyChecking=no" -u ubuntu --private-key=./k8-new-key-pair.pem
 
 Run the Play Book
