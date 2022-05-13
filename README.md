@@ -38,7 +38,7 @@ Ansible Installation
 - pip3 install ansible --user
 - pip3 install boto3 --user
 
-Initiate the Cluster using Terraform
+Initiate & Setup the Cluster using Terraform
 -------------------------------------
 
 - terraform init 
