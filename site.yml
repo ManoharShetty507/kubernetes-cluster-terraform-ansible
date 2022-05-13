@@ -1,0 +1,8 @@
+- name: Install Kubernetes Dependencies
+  import_playbook: kube-dependencies.yaml
+
+- name: Initialize Kubernetes Master
+  import_playbook: kube-master.yaml
+
+- name: Install Kubernetes Dependencies
+  import_playbook: kube-worker.yaml
