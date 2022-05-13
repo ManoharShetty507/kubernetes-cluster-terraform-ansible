@@ -1,5 +1,5 @@
 # kubernetes-cluster-terraform-ansible
-Build Kubernetes Cluster using Terraform and Ansible on AWS
+Build Kubernetes Cluster on AWS using Terraform and Ansible
 
 
 Requirements:
@@ -33,21 +33,21 @@ Install Terraform
 Ansible Installation
 --------------------
 
-- # sudo su ansible
-- # sudo yum install python3 -y
-- # sudo alternatives --set python /usr/bin/python3
-- # sudo yum -y install python3-pip -y
-- # pip3 install ansible --user
-- # pip3 install boto3 --user
+- * sudo su ansible
+- * sudo yum install python3 -y
+- * sudo alternatives --set python /usr/bin/python3
+- * sudo yum -y install python3-pip -y
+- * pip3 install ansible --user
+- * pip3 install boto3 --user
 
 Initiate the Cluster using Terraform
 -------------------------------------
 
-- # terraform init 
-- # terraform validate
-- # terraform plan
-- # terraform apply
-- # terraform apply --auto-approve 
+- * terraform init 
+- * terraform validate
+- * terraform plan
+- * terraform apply
+- * terraform apply --auto-approve 
 
 Configuration Management using Ansible
 --------------------------------------
@@ -56,12 +56,26 @@ Configuration Management using Ansible
 - Check if all the hosts are pinging
 - ansible all -m ping
 - Let's set the default region
-- # mkdir ~/.aws
+- * mkdir ~/.aws
 
-- # vi ~/.aws/config
+- * vi ~/.aws/config
   - Add this lines
     - [default]
     - region=ap-south-1
 
-- # chmod +x DynamicInventory.py 
-- # ./DynamicInventory.py --list
+- * chmod +x DynamicInventory.py 
+- * ./DynamicInventory.py --list
+- 
+- Copy the Pem File
+-  * vi ~/k8-allinone.pem
+
+- Change the permission of the key
+- * chmod 400 k8-new-key-pair.pem
+
+- Check if there is interconnectivity among the servers
+- * ansible Kubernetes_Servers -i DynamicInventory.py -m ping --ssh-common-args="-o StrictHostKeyChecking=no" -u ubuntu --private-key=./k8-new-key-pair.pem
+
+Run the Play Book
+-------------------
+
+- * ansible-playbook -i DynamicInventory.py site.yml -u ubuntu --private-key=./k8-new-key-pair.pem
