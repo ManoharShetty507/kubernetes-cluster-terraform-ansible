@@ -4,7 +4,7 @@ Build Kubernetes Cluster on AWS using Terraform and Ansible
 
 Requirements:
 ------------
-- AWS Account
+&#8594; AWS Account
 - Create Redhat EC2 Instance
 - Create IAM role with required policies
   - VPC full-access
