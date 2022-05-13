@@ -1,7 +1,6 @@
 #!/bin/python
 
-# Fetch List Servers from AWS and Group based on EC2
-# Instance tag name and value
+# Fetch List of Servers (Dynamic) from AWS and Group it based on EC2 Instance tag name and value
 
 import pprint
 import boto3
